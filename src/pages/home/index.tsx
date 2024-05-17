@@ -106,39 +106,18 @@ const Home = () => {
             padding: "20px",
           }}
         >
-          Our Clients
+          Why choose us?
         </Typography>
-        <Box
+        <Typography
           sx={{
-            display: "flex",
-            justifyContent: "space-around",
-            flexWrap: "wrap",
-            gap: "20px",
-            alignItems: "center",
+            fontSize: { xs: "16px", sm: "18px", md: "20px" },
+            textAlign: "center",
             padding: "20px",
           }}
         >
-          <img
-            src="https://www.w3schools.com/w3images/avatar2.png"
-            alt="client1"
-            style={{ width: "100px", height: "100px" }}
-          />
-          <img
-            src="https://www.w3schools.com/w3images/avatar2.png"
-            alt="client2"
-            style={{ width: "100px", height: "100px" }}
-          />
-          <img
-            src="https://www.w3schools.com/w3images/avatar2.png"
-            alt="client3"
-            style={{ width: "100px", height: "100px" }}
-          />
-          <img
-            src="https://www.w3schools.com/w3images/avatar2.png"
-            alt="client4"
-            style={{ width: "100px", height: "100px" }}
-          />
-        </Box>
+          We are the best in the business. We provide the best solutions to
+          ensure your emails get delivered to the inbox.
+        </Typography>
       </Box>
     </Box>
   );

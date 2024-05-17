@@ -26,7 +26,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar
-      position="static"
+      position="sticky"
       color="transparent"
       elevation={0}
       sx={{ borderBottom: "1px solid #ddd", backgroundColor: "#fff" }}
