@@ -5,6 +5,7 @@ const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    contactNumber: "",
     message: "",
   });
 
@@ -47,21 +48,28 @@ const ContactUs = () => {
         >
           Contact Us
         </Typography>
-        <Typography variant="body1" align="center" gutterBottom>
-          Contact us for any queries or feedback. Or fill in the form below and
-          we will get back to you as soon as possible.
+        <Typography
+          variant="body1"
+          align="center"
+          gutterBottom
+          sx={{
+            textAlign: { xs: "justify", sm: "center" },
+            fontSize: { sm: "16px", xs: "14px" },
+          }}
+        >
+          We'd love to hear from you! For any questions or feedback, please
+          reach out to us. Fill out the form below, and we'll respond as quickly
+          as possible.
         </Typography>
         <form onSubmit={handleSubmit}>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
-              gap: "20px",
+              gap: "16px",
               padding: "20px",
               marginTop: "20px",
-              border: "1px solid #ccc",
               borderRadius: "5px",
-              // backgroundColor: "#f9f9f9",
             }}
           >
             <TextField
@@ -71,6 +79,8 @@ const ContactUs = () => {
               value={formData.name}
               onChange={handleChange}
               fullWidth
+              size="small"
+              sx={{ background: "white" }}
             />
             <TextField
               label="Email"
@@ -80,6 +90,19 @@ const ContactUs = () => {
               value={formData.email}
               onChange={handleChange}
               fullWidth
+              size="small"
+              sx={{ background: "white" }}
+            />
+            <TextField
+              label="Contact Number"
+              variant="outlined"
+              name="contactNumber"
+              type="tel"
+              value={formData.contactNumber}
+              onChange={handleChange}
+              fullWidth
+              size="small"
+              sx={{ background: "white" }}
             />
             <TextField
               label="Message"
@@ -90,6 +113,8 @@ const ContactUs = () => {
               value={formData.message}
               onChange={handleChange}
               fullWidth
+              size="small"
+              sx={{ background: "white" }}
             />
             <Button
               type="submit"

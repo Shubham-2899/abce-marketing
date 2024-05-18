@@ -33,11 +33,13 @@ function ResponsiveAppBar() {
     >
       <Toolbar disableGutters>
         <div style={{ flexGrow: 1, paddingLeft: "16px" }}>
-          <img
-            src={abclogo}
-            alt="abc email marketing"
-            style={{ objectFit: "cover", width: "auto", height: "3vh" }}
-          />
+          <Link style={{ textDecoration: "none", color: "#777" }} to={`/home`}>
+            <img
+              src={abclogo}
+              alt="abc email marketing"
+              style={{ objectFit: "cover", width: "auto", height: "3vh" }}
+            />
+          </Link>
         </div>
         <Box
           sx={{
