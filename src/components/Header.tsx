@@ -7,7 +7,6 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
 import abclogo from "../assets/abce-logo.png";
 
 const pages = ["Home", "About Us", "Contact Us", "Services"];
@@ -73,7 +72,7 @@ function ResponsiveAppBar() {
                 display: "flex",
                 flexDirection: "column",
                 width: "100%",
-                top: "58px",
+                top: "57px",
                 left: 0,
                 position: "absolute",
                 color: "#777",
@@ -83,26 +82,29 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem
+                <Link
                   key={page}
                   onClick={handleMenuItemClick}
-                  sx={{
+                  style={{
+                    paddingLeft: "10px",
+                    textDecoration: "none",
+                    color: "#777",
                     backgroundColor:
                       location.pathname ===
                       `/${page.toLowerCase().replace(" ", "-")}`
                         ? "#00acef"
                         : "transparent",
                   }}
+                  to={`/${page.toLowerCase().replace(" ", "-")}`}
                 >
-                  <Link
+                  <Typography
+                    variant="h6"
                     style={{ textDecoration: "none", color: "#777" }}
-                    to={`/${page.toLowerCase().replace(" ", "-")}`}
+                    // to={`/${page.toLowerCase().replace(" ", "-")}`}
                   >
-                    <Typography variant="h6" textAlign="center">
-                      {page}
-                    </Typography>
-                  </Link>
-                </MenuItem>
+                    {page}
+                  </Typography>
+                </Link>
               ))}
             </nav>
           )}

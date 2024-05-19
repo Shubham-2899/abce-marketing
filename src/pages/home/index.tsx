@@ -1,8 +1,9 @@
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 import backN from "../../assets/backN.jpg";
 import service1 from "../../assets/service1.png";
 import service2 from "../../assets/service2.png";
 import service3 from "../../assets/service3.png";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -98,26 +99,90 @@ const Home = () => {
           ))}
         </Box>
       </div>
-      <Box>
+      <Box
+        sx={{
+          backgroundColor: "#f5f5f5",
+          padding: "40px 20px",
+          marginTop: "40px",
+          borderRadius: "8px",
+          boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+        }}
+      >
         <Typography
           sx={{
-            fontSize: { xs: "22px", sm: "24px", md: "28px" },
+            fontSize: { xs: "24px", sm: "26px", md: "30px" },
             textAlign: "center",
-            padding: "20px",
+            marginBottom: "20px",
+            fontWeight: "bold",
           }}
         >
           Why choose us?
         </Typography>
-        <Typography
-          sx={{
-            fontSize: { xs: "16px", sm: "18px", md: "20px" },
-            textAlign: "center",
-            padding: "20px",
+        <ul
+          style={{
+            listStyle: "none",
+            padding: 0,
+            margin: 0,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "20px",
           }}
         >
-          We are the best in the business. We provide the best solutions to
-          ensure your emails get delivered to the inbox.
-        </Typography>
+          <li
+            style={{
+              backgroundColor: "white",
+              padding: "20px",
+              borderRadius: "8px",
+              boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+              width: "100%",
+              maxWidth: "600px",
+              textAlign: "left",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: "16px", sm: "18px", md: "20px" },
+                textAlign: "center",
+              }}
+            >
+              We are the best in the business. We provide the best solutions to
+              ensure your emails get delivered to the inbox.
+            </Typography>
+          </li>
+          <li
+            style={{
+              backgroundColor: "white",
+              padding: "20px",
+              borderRadius: "8px",
+              boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+              width: "100%",
+              maxWidth: "600px",
+              textAlign: "left",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: "16px", sm: "18px", md: "20px" },
+                textAlign: "center",
+              }}
+            >
+              We have a 100% satisfaction rate from our clients. We are the best
+              in the business.
+            </Typography>
+          </li>
+        </ul>
+      </Box>
+      <Box sx={{ margin: "20px auto", textAlign: "center" }}>
+        <Button
+          component={Link}
+          to="/contact-us"
+          variant="contained"
+          color="primary"
+          sx={{ padding: "10px 20px", fontSize: { xs: "16px", sm: "18px" } }}
+        >
+          Contact Us
+        </Button>
       </Box>
     </Box>
   );

@@ -9,20 +9,66 @@ const ContactUs = () => {
     message: "",
   });
 
+  const [errors, setErrors] = useState({
+    emailError: "",
+    contactNumberError: "",
+  });
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+
+    // Check for contact number length
+    if (name === "contactNumber" && value.length > 10) {
+      return;
+    }
+
     setFormData({
       ...formData,
       [name]: value,
     });
+
+    // Clear previous errors when input changes
+    setErrors({
+      ...errors,
+      [`${name}Error`]: "",
+    });
+  };
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateMobileNumber = (contactNumber: string) => {
+    const contactNumberRegex = /^[0-9]{10}$/;
+    return contactNumberRegex.test(contactNumber);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic
-    console.log(formData);
+
+    const { email, contactNumber } = formData;
+    let emailError = "";
+    let contactNumberError = "";
+
+    if (!validateEmail(email)) {
+      emailError = "Invalid email address";
+    }
+
+    if (!validateMobileNumber(contactNumber.toString())) {
+      contactNumberError = "Invalid mobile number";
+    }
+
+    if (emailError || contactNumberError) {
+      setErrors({
+        emailError,
+        contactNumberError,
+      });
+    } else {
+      console.log(formData);
+    }
   };
 
   return (
@@ -81,6 +127,7 @@ const ContactUs = () => {
               fullWidth
               size="small"
               sx={{ background: "white" }}
+              required
             />
             <TextField
               label="Email"
@@ -91,18 +138,24 @@ const ContactUs = () => {
               onChange={handleChange}
               fullWidth
               size="small"
+              error={Boolean(errors.emailError)}
+              helperText={errors.emailError}
               sx={{ background: "white" }}
+              required
             />
             <TextField
               label="Contact Number"
               variant="outlined"
               name="contactNumber"
-              type="tel"
+              type="number"
               value={formData.contactNumber}
               onChange={handleChange}
               fullWidth
               size="small"
+              error={Boolean(errors.contactNumberError)}
+              helperText={errors.contactNumberError}
               sx={{ background: "white" }}
+              required
             />
             <TextField
               label="Message"
