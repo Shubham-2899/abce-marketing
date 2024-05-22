@@ -7,7 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import Button from "@mui/material/Button";
-import abclogo from "../assets/abce-logo.png";
+import mms from "../assets/mms.jpeg";
 
 const pages = ["Home", "About Us", "Contact Us", "Services"];
 
@@ -31,12 +31,16 @@ function ResponsiveAppBar() {
       sx={{ borderBottom: "1px solid #ddd", backgroundColor: "#fff" }}
     >
       <Toolbar disableGutters>
-        <div style={{ flexGrow: 1, paddingLeft: "16px" }}>
+        <div style={{ flexGrow: 1 }}>
           <Link style={{ textDecoration: "none", color: "#777" }} to={`/home`}>
             <img
-              src={abclogo}
-              alt="abc email marketing"
-              style={{ objectFit: "cover", width: "auto", height: "3vh" }}
+              src={mms}
+              alt="monkey media email marketing"
+              style={{
+                objectFit: "cover",
+                maxWidth: "150px",
+                margin: "5px",
+              }}
             />
           </Link>
         </div>

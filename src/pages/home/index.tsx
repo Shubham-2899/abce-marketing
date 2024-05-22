@@ -1,5 +1,5 @@
 import { Box, Button, Card, CardContent, Typography } from "@mui/material";
-import backN from "../../assets/backN.jpg";
+import mainbglarge from "../../assets/mainbglarge.jpg";
 import service1 from "../../assets/service1.png";
 import service2 from "../../assets/service2.png";
 import service3 from "../../assets/service3.png";
@@ -31,7 +31,7 @@ const Home = () => {
     <Box sx={{ textAlign: "center" }}>
       <div style={{ height: "460px", width: "100%", position: "relative" }}>
         <img
-          src={backN}
+          src={mainbglarge}
           alt="home-background"
           style={{
             objectFit: "cover",

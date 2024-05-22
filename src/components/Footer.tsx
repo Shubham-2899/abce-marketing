@@ -12,7 +12,7 @@ const Footer = () => {
           color: "#fff",
         }}
       >
-        © {new Date().getFullYear()} ABC Email Marketing. All rights reserved.
+        © {new Date().getFullYear()} Monkey Media Services. All rights reserved.
       </Typography>
     </Box>
   );

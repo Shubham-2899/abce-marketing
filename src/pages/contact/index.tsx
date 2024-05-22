@@ -14,6 +14,8 @@ const ContactUs = () => {
     contactNumberError: "",
   });
 
+  const [successMessage, setSuccessMessage] = useState("");
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -67,7 +69,10 @@ const ContactUs = () => {
         contactNumberError,
       });
     } else {
-      console.log(formData);
+      setSuccessMessage(
+        "Message sent successfully! One of our team members will get back to you soon."
+      );
+      console.log("formData:", formData);
     }
   };
 
@@ -108,6 +113,16 @@ const ContactUs = () => {
           as possible.
         </Typography>
         <form onSubmit={handleSubmit}>
+          {successMessage && (
+            <Typography
+              variant="body2"
+              align="center"
+              color="green"
+              sx={{ marginTop: "10px" }}
+            >
+              {successMessage}
+            </Typography>
+          )}
           <Box
             sx={{
               display: "flex",
