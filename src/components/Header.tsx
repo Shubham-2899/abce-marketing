@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import Button from "@mui/material/Button";
 import mms from "../assets/mms.jpeg";
+import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
 
 const pages = ["Home", "About Us", "Contact Us", "Services"];
 
@@ -38,7 +39,7 @@ function ResponsiveAppBar() {
               alt="monkey media email marketing"
               style={{
                 objectFit: "cover",
-                maxWidth: "150px",
+                maxWidth: "165px",
                 margin: "5px",
               }}
             />
@@ -68,7 +69,11 @@ function ResponsiveAppBar() {
             }}
             disableRipple={true}
           >
-            <MenuRoundedIcon sx={{ color: "#888" }} />
+            {openNav ? (
+              <ClearRoundedIcon sx={{ color: "#888" }} />
+            ) : (
+              <MenuRoundedIcon sx={{ color: "#888" }} />
+            )}
           </IconButton>
           {openNav && (
             <nav
