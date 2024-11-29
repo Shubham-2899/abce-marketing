@@ -12,7 +12,8 @@ const Footer = () => {
           color: "#fff",
         }}
       >
-        © {new Date().getFullYear()} Monkey Media Services. All rights reserved.
+        © {new Date().getFullYear()} Monkey Media Solutions. All rights
+        reserved.
       </Typography>
     </Box>
   );
