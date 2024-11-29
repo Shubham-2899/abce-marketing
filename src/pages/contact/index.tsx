@@ -12,6 +12,7 @@ const ContactUs = () => {
   const [errors, setErrors] = useState({
     emailError: "",
     contactNumberError: "",
+    nameError: "",
   });
 
   const [successMessage, setSuccessMessage] = useState("");
@@ -44,29 +45,40 @@ const ContactUs = () => {
   };
 
   const validateMobileNumber = (contactNumber: string) => {
-    const contactNumberRegex = /^[0-9]{10}$/;
+    const contactNumberRegex = /^[6-9]\d{9}$/;
     return contactNumberRegex.test(contactNumber);
+  };
+
+  const validateName = (name: string) => {
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    return nameRegex.test(name);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { email, contactNumber } = formData;
+    const { email, contactNumber, name } = formData;
     let emailError = "";
     let contactNumberError = "";
+    let nameError = "";
 
     if (!validateEmail(email)) {
-      emailError = "Invalid email address";
+      emailError = "Please enter a valid email address";
     }
 
     if (!validateMobileNumber(contactNumber.toString())) {
-      contactNumberError = "Invalid mobile number";
+      contactNumberError = "Please enter a valid 10-digit mobile number";
     }
 
-    if (emailError || contactNumberError) {
+    if (!validateName(name.trim())) {
+      nameError = "Name must contain only alphabets and spaces";
+    }
+
+    if (emailError || contactNumberError || nameError) {
       setErrors({
         emailError,
         contactNumberError,
+        nameError,
       });
     } else {
       setSuccessMessage(
@@ -137,10 +149,13 @@ const ContactUs = () => {
               label="Name"
               variant="outlined"
               name="name"
+              type="text"
               value={formData.name}
               onChange={handleChange}
               fullWidth
               size="small"
+              error={Boolean(errors.nameError)}
+              helperText={errors.nameError}
               sx={{ background: "white" }}
               required
             />
@@ -186,7 +201,7 @@ const ContactUs = () => {
             />
             <Button
               type="submit"
-              variant="contained"
+              variant="outlined"
               color="primary"
               sx={{ alignSelf: "center" }}
             >

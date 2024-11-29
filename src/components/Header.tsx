@@ -129,7 +129,7 @@ function ResponsiveAppBar() {
           {/* Dropdown Menu */}
           <Box
             sx={{
-              position: "absolute",
+              position: "fixed",
               top: "75px",
               right: 0,
               width: "100%",

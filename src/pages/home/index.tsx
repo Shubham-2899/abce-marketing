@@ -177,7 +177,7 @@ const Home = () => {
         <Button
           component={Link}
           to="/contact-us"
-          variant="contained"
+          variant="outlined"
           color="primary"
           sx={{ padding: "10px 20px", fontSize: { xs: "16px", sm: "18px" } }}
         >
