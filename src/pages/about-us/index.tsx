@@ -13,7 +13,7 @@ const AboutUs = () => {
     >
       <Typography sx={{ pt: "20px", fontSize: "30px" }}>About Us</Typography>
       <Typography sx={{ textAlign: "justify", mt: 2 }}>
-        Monkey Media Email Marketing is a leading email marketing service
+        RASPIX Media Email Marketing is a leading email marketing service
         provider that offers a comprehensive suite of tools to help businesses
         grow. We help businesses of all sizes to create, send, and track their
         email campaigns. Our platform is easy to use and comes with a variety of

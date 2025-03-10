@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
-import mms from "../assets/mms.jpeg";
+import mms from "../assets/raslogo.png";
 
 const pages = ["Home", "About Us", "Contact Us", "Services"];
 
@@ -43,11 +43,11 @@ function ResponsiveAppBar() {
             >
               <img
                 src={mms}
-                alt="monkey media email marketing"
+                alt="raspix media email marketing"
                 style={{
                   objectFit: "cover",
                   maxWidth: "165px",
-                  margin: "5px",
+                  margin: ".2rem 0 .2rem 1rem",
                 }}
               />
             </Link>
