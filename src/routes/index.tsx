@@ -4,6 +4,9 @@ import Home from "../pages/home";
 import AboutUs from "../pages/about-us";
 import ContactUs from "../pages/contact";
 import Services from "../pages/services";
+import Testimonials from '../pages/testimonials';
+import Portfolio from '../pages/portfolio';
+import PrivacyPolicy from '../pages/privacy-policy';
 
 const ABCRoutes = () => {
   return (
@@ -13,6 +16,9 @@ const ABCRoutes = () => {
       <Route path="contact-us" element={<ContactUs />} />
       <Route path="about-us" element={<AboutUs />} />
       <Route path="services" element={<Services />} />
+      <Route path="testimonials" element={<Testimonials />} />
+      <Route path="portfolio" element={<Portfolio />} />
+      <Route path="privacy-policy" element={<PrivacyPolicy />} />
       <Route path="*" element={<NotFound404 />} />
     </Routes>
   );
