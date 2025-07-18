@@ -1,10 +1,19 @@
-import { Box, Typography, TextField, Button, Card, CardContent, Grid, Avatar } from "@mui/material";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Card,
+  CardContent,
+  Grid,
+  Avatar,
+} from "@mui/material";
 import React, { useState } from "react";
-import { useTheme } from '@mui/material/styles';
-import { motion } from 'framer-motion';
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { useTheme } from "@mui/material/styles";
+import { motion } from "framer-motion";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 const ContactUs = () => {
   const theme = useTheme();
@@ -22,6 +31,7 @@ const ContactUs = () => {
   });
 
   const [successMessage, setSuccessMessage] = useState("");
+  console.log("🚀 ~ ContactUs ~ successMessage:", successMessage);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -103,16 +113,16 @@ const ContactUs = () => {
       <Box
         sx={{
           background: theme.palette.background.paper,
-          width: '100%',
+          width: "100%",
           py: 8,
           px: { xs: 2, md: 8 },
         }}
       >
         <Box
           sx={{
-            padding: '20px',
-            maxWidth: '700px',
-            margin: 'auto',
+            padding: "20px",
+            maxWidth: "700px",
+            margin: "auto",
             color: theme.palette.text.primary,
           }}
         >
@@ -120,7 +130,7 @@ const ContactUs = () => {
             variant="h3"
             align="center"
             gutterBottom
-            sx={{ fontSize: '30px' }}
+            sx={{ fontSize: "30px" }}
           >
             Contact Us
           </Typography>
@@ -129,48 +139,97 @@ const ContactUs = () => {
             align="center"
             gutterBottom
             sx={{
-              textAlign: { xs: 'justify', sm: 'center' },
-              fontSize: { sm: '16px', xs: '14px' },
+              textAlign: { xs: "justify", sm: "center" },
+              fontSize: { sm: "16px", xs: "14px" },
             }}
           >
             We'd love to hear from you! For any questions or feedback, please
-            reach out to us. Fill out the form below, and we'll respond as quickly
-            as possible.
+            reach out to us. Fill out the form below, and we'll respond as
+            quickly as possible.
           </Typography>
         </Box>
         {/* Contact Info Cards */}
         <Grid container spacing={4} justifyContent="center" mb={4}>
           <Grid item xs={12} sm={4}>
-            <Card sx={{ p: 2, display: 'flex', alignItems: 'center', background: theme.palette.background.default }}>
-              <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}><LocationOnIcon /></Avatar>
+            <Card
+              sx={{
+                p: 2,
+                display: "flex",
+                alignItems: "center",
+                background: theme.palette.background.default,
+              }}
+            >
+              <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}>
+                <LocationOnIcon />
+              </Avatar>
               <CardContent sx={{ p: 0 }}>
                 <Typography fontWeight={600}>Address</Typography>
-                <Typography variant="body2" color={theme.palette.text.secondary}>123 Main Street, Mumbai, India</Typography>
+                <Typography
+                  variant="body2"
+                  color={theme.palette.text.secondary}
+                >
+                  123 Main Street, Mumbai, India
+                </Typography>
               </CardContent>
             </Card>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Card sx={{ p: 2, display: 'flex', alignItems: 'center', background: theme.palette.background.default }}>
-              <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}><EmailIcon /></Avatar>
+            <Card
+              sx={{
+                p: 2,
+                display: "flex",
+                alignItems: "center",
+                background: theme.palette.background.default,
+              }}
+            >
+              <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}>
+                <EmailIcon />
+              </Avatar>
               <CardContent sx={{ p: 0 }}>
                 <Typography fontWeight={600}>Email</Typography>
-                <Typography variant="body2" color={theme.palette.text.secondary}>info@raspixmedia.com</Typography>
+                <Typography
+                  variant="body2"
+                  color={theme.palette.text.secondary}
+                >
+                  info@raspixmedia.com
+                </Typography>
               </CardContent>
             </Card>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Card sx={{ p: 2, display: 'flex', alignItems: 'center', background: theme.palette.background.default }}>
-              <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}><PhoneIcon /></Avatar>
+            <Card
+              sx={{
+                p: 2,
+                display: "flex",
+                alignItems: "center",
+                background: theme.palette.background.default,
+              }}
+            >
+              <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}>
+                <PhoneIcon />
+              </Avatar>
               <CardContent sx={{ p: 0 }}>
                 <Typography fontWeight={600}>Phone</Typography>
-                <Typography variant="body2" color={theme.palette.text.secondary}>+91 98765 43210</Typography>
+                <Typography
+                  variant="body2"
+                  color={theme.palette.text.secondary}
+                >
+                  +91 98765 43210
+                </Typography>
               </CardContent>
             </Card>
           </Grid>
         </Grid>
         {/* Google Map Embed */}
-        <Box sx={{ width: '100%', maxWidth: 700, mx: 'auto', mb: 4 }}>
-          <Box sx={{ height: 200, borderRadius: 3, overflow: 'hidden', boxShadow: 2 }}>
+        <Box sx={{ width: "100%", maxWidth: 700, mx: "auto", mb: 4 }}>
+          <Box
+            sx={{
+              height: 200,
+              borderRadius: 3,
+              overflow: "hidden",
+              boxShadow: 2,
+            }}
+          >
             {/* 
               Replace the src below with your Google Maps embed URL.
               To use your API key, generate the embed link from Google Maps Platform.
@@ -188,15 +247,15 @@ const ContactUs = () => {
             */}
             <Box
               sx={{
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'text.secondary',
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "text.secondary",
                 fontWeight: 500,
                 fontSize: 18,
-                background: 'rgba(0,0,0,0.03)',
+                background: "rgba(0,0,0,0.03)",
               }}
             >
               [Google Map will appear here]
@@ -211,14 +270,14 @@ const ContactUs = () => {
         >
           <Box
             sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px',
-              padding: '20px',
-              margin: 'auto',
-              borderRadius: '5px',
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
+              padding: "20px",
+              margin: "auto",
+              borderRadius: "5px",
               background: theme.palette.background.default,
-              maxWidth: '700px',
+              maxWidth: "700px",
             }}
           >
             <TextField
@@ -279,7 +338,7 @@ const ContactUs = () => {
               variant="contained"
               color="primary"
               onClick={handleSubmit}
-              sx={{ fontWeight: 600, fontSize: '16px' }}
+              sx={{ fontWeight: 600, fontSize: "16px" }}
             >
               Submit
             </Button>

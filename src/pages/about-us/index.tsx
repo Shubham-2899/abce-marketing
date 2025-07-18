@@ -91,7 +91,7 @@ const AboutUs = () => {
           the best tools and support to help businesses succeed with email
           marketing.
         </Typography>
-        <Typography sx={{ pt: "20px", fontSize: "30px" }}>Our Team</Typography>
+
         {/* <Typography sx={{ textAlign: 'justify', mt: 2 }}>
           Our team of experts has years of experience in the industry and is
           committed to providing the best tools and support to help businesses
