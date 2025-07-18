@@ -8,97 +8,248 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
+import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import Diversity3Icon from "@mui/icons-material/Diversity3";
+
+const team = [
+  {
+    name: "Amit Verma",
+    role: "Founder & CEO",
+    bio: "Visionary leader with 15+ years in digital marketing and SaaS. Passionate about innovation and client success.",
+    avatar: "",
+  },
+  {
+    name: "Sara Lee",
+    role: "Head of Strategy",
+    bio: "Expert in campaign strategy and analytics. Loves turning data into actionable growth.",
+    avatar: "",
+  },
+  {
+    name: "Mohammed Al-Sayed",
+    role: "Lead Developer",
+    bio: "Full-stack developer focused on scalable, secure, and user-friendly solutions.",
+    avatar: "",
+  },
+  {
+    name: "Priya Nair",
+    role: "Client Success Manager",
+    bio: "Ensures every client gets the most from our platform. Known for her dedication and empathy.",
+    avatar: "",
+  },
+];
+
+const getInitials = (name: string) =>
+  name
+    .split(" ")
+    .map((n) => n[0])
+    .join("");
+
+const values = [
+  {
+    icon: <EmojiObjectsIcon color="primary" fontSize="large" />,
+    title: "Innovation",
+    desc: "We embrace new ideas and technology.",
+  },
+  {
+    icon: <VerifiedUserIcon color="secondary" fontSize="large" />,
+    title: "Trust",
+    desc: "Integrity and transparency in all we do.",
+  },
+  {
+    icon: <TrendingUpIcon color="primary" fontSize="large" />,
+    title: "Growth",
+    desc: "We help clients and our team grow.",
+  },
+  {
+    icon: <Diversity3Icon color="secondary" fontSize="large" />,
+    title: "Collaboration",
+    desc: "We win together as a team.",
+  },
+];
 
 const AboutUs = () => {
   const theme = useTheme();
-  const team = [
-    {
-      name: "Amit Verma",
-      role: "Founder & CEO",
-      bio: "Visionary leader with 15+ years in digital marketing and SaaS. Passionate about innovation and client success.",
-      avatar: "",
-    },
-    {
-      name: "Sara Lee",
-      role: "Head of Strategy",
-      bio: "Expert in campaign strategy and analytics. Loves turning data into actionable growth.",
-      avatar: "",
-    },
-    {
-      name: "Mohammed Al-Sayed",
-      role: "Lead Developer",
-      bio: "Full-stack developer focused on scalable, secure, and user-friendly solutions.",
-      avatar: "",
-    },
-    {
-      name: "Priya Nair",
-      role: "Client Success Manager",
-      bio: "Ensures every client gets the most from our platform. Known for her dedication and empathy.",
-      avatar: "",
-    },
-  ];
-
-  const getInitials = (name: string) =>
-    name
-      .split(" ")
-      .map((n) => n[0])
-      .join("");
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-    >
+    <Box sx={{ background: theme.palette.background.default }}>
+      {/* Hero Section */}
       <Box
         sx={{
-          bgcolor: theme.palette.background.paper,
-          color: theme.palette.text.primary,
-          padding: { xs: "10% 8%", sm: "10% 10%", md: "5% 15%" },
+          minHeight: { xs: 220, md: 280 },
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
           textAlign: "center",
-          fontSize: "16px",
+          py: 6,
+          px: 2,
+          background: `linear-gradient(90deg, ${theme.palette.primary.main}11 0%, ${theme.palette.secondary.main}11 100%)`,
         }}
       >
-        <Typography sx={{ pt: "20px", fontSize: "30px" }}>About Us</Typography>
-        <Typography sx={{ textAlign: "justify", mt: 2 }}>
-          RASPIX Media Email Marketing is a leading email marketing service
-          provider that offers a comprehensive suite of tools to help businesses
-          grow. We help businesses of all sizes to create, send, and track their
-          email campaigns. Our platform is easy to use and comes with a variety
-          of features that make it easy for businesses to create
-          professional-looking emails and newsletters.
-        </Typography>
-        <Typography sx={{ textAlign: "justify", mt: 2 }}>
-          Our team of experts is dedicated to helping businesses succeed with
-          email marketing. We provide personalized support to help businesses
-          get the most out of their email campaigns. Whether you are new to
-          email marketing or an experienced pro, we have the tools and expertise
-          to help you succeed.
-        </Typography>
-        <Typography sx={{ textAlign: "justify", mt: 2 }}>
-          We offer a variety of templates that can be customized to fit your
-          brand and style. Our platform also includes advanced features like A/B
-          testing, automation, and analytics to help you get the most out of
-          your email campaigns.
-        </Typography>
-        <Typography sx={{ pt: "20px", fontSize: "30px" }}>
-          Our Mission
-        </Typography>
-        <Typography sx={{ textAlign: "justify", mt: 2 }}>
-          Our mission is to help businesses succeed with email marketing. We
-          believe that email marketing is one of the most effective ways to
-          reach customers and grow your business. We are committed to providing
-          the best tools and support to help businesses succeed with email
-          marketing.
-        </Typography>
-
-        {/* <Typography sx={{ textAlign: 'justify', mt: 2 }}>
-          Our team of experts has years of experience in the industry and is
-          committed to providing the best tools and support to help businesses
-          succeed with email marketing. Whether you are new to email marketing or
-          an experienced pro, we have the tools and expertise to help you succeed.
-        </Typography> */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <Typography
+            variant="h2"
+            fontWeight={700}
+            color={theme.palette.text.primary}
+            mb={2}
+          >
+            About RASPIX Media
+          </Typography>
+          <Typography variant="h5" color={theme.palette.text.secondary} mb={2}>
+            Empowering your business with reliable, innovative, and impactful
+            email marketing solutions.
+          </Typography>
+        </motion.div>
       </Box>
+
+      {/* Company Story Section */}
+      <Box sx={{ py: 6, px: { xs: 2, md: 8 }, maxWidth: 1200, mx: "auto" }}>
+        <Grid container spacing={4} alignItems="center">
+          <Grid item xs={12} md={6}>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              <Typography
+                variant="h4"
+                fontWeight={600}
+                mb={2}
+                color={theme.palette.text.primary}
+              >
+                Our Story
+              </Typography>
+              <Typography
+                variant="body1"
+                color={theme.palette.text.secondary}
+                mb={2}
+              >
+                RASPIX Media Email Marketing is a leading provider of email
+                marketing solutions for businesses of all sizes. Our platform is
+                designed to help you create, send, and track professional
+                campaigns with ease. We believe in the power of email to build
+                relationships, drive growth, and deliver measurable results.
+              </Typography>
+              <Typography variant="body1" color={theme.palette.text.secondary}>
+                With a team of passionate experts, we combine technology,
+                creativity, and data-driven strategy to help you reach your
+                audience and achieve your goals. Whether you’re a startup or an
+                enterprise, we’re committed to your success.
+              </Typography>
+            </motion.div>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              <Box
+                sx={{
+                  width: "100%",
+                  height: { xs: 180, md: 240 },
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <img
+                  src="/src/assets/raslogo.png"
+                  alt="RASPIX Media Logo"
+                  style={{
+                    maxHeight: "100%",
+                    maxWidth: "100%",
+                    borderRadius: 16,
+                    boxShadow: "0 2px 12px 0 rgba(0,0,0,0.08)",
+                  }}
+                />
+              </Box>
+            </motion.div>
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* Core Values Section */}
+      <Box
+        sx={{
+          py: 6,
+          px: { xs: 2, md: 8 },
+          background: theme.palette.background.paper,
+        }}
+      >
+        <Typography
+          variant="h4"
+          align="center"
+          fontWeight={700}
+          mb={4}
+          color={theme.palette.text.primary}
+        >
+          Our Core Values
+        </Typography>
+        <Grid
+          container
+          spacing={4}
+          justifyContent="center"
+          alignItems="stretch"
+        >
+          {values.map((val, i) => (
+            <Grid item xs={12} sm={6} md={3} key={val.title}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    py: 3,
+                    px: 2,
+                    borderRadius: 3,
+                    background: "none",
+                    minHeight: 140,
+                  }}
+                >
+                  <Avatar
+                    sx={{
+                      bgcolor: theme.palette.background.paper,
+                      width: 56,
+                      height: 56,
+                      mb: 1,
+                      boxShadow: 1,
+                    }}
+                  >
+                    {val.icon}
+                  </Avatar>
+                  <Typography
+                    fontWeight={600}
+                    fontSize="1.1rem"
+                    mb={1}
+                    color={theme.palette.text.primary}
+                  >
+                    {val.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color={theme.palette.text.secondary}
+                    align="center"
+                  >
+                    {val.desc}
+                  </Typography>
+                </Box>
+              </motion.div>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
       {/* Our Team Section */}
       <Box sx={{ mt: 8, mx: 2 }}>
         <Typography
@@ -109,13 +260,6 @@ const AboutUs = () => {
           color={theme.palette.text.primary}
         >
           Our Team
-        </Typography>
-        <Typography sx={{ textAlign: "center", my: 2, fontSize: "18px" }}>
-          Our team of experts has years of experience in the industry and is
-          committed to providing the best tools and support to help businesses
-          succeed with email marketing. Whether you are new to email marketing
-          or an experienced pro, we have the tools and expertise to help you
-          succeed.
         </Typography>
         <Grid container spacing={4} justifyContent="center">
           {team.map((member, i) => (
@@ -182,7 +326,7 @@ const AboutUs = () => {
           ))}
         </Grid>
       </Box>
-    </motion.div>
+    </Box>
   );
 };
 
