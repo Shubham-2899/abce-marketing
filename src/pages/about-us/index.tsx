@@ -15,30 +15,31 @@ import Diversity3Icon from "@mui/icons-material/Diversity3";
 
 const team = [
   {
-    name: "Amit Verma",
-    role: "Founder & CEO",
-    bio: "Visionary leader with 15+ years in digital marketing and SaaS. Passionate about innovation and client success.",
+    name: "Rahul Kadam",
+    role: "Co-Founder & Chief Executive Officer (CEO)",
+    bio: "A visionary entrepreneur with over 15 years of experience in digital marketing and SaaS. Passionate about driving innovation, fostering growth, and delivering exceptional client outcomes.",
     avatar: "",
   },
   {
-    name: "Sara Lee",
-    role: "Head of Strategy",
-    bio: "Expert in campaign strategy and analytics. Loves turning data into actionable growth.",
+    name: "Ajay Shinde",
+    role: "Co-Founder & Head of Product",
+    bio: "A strategic thinker with deep expertise in campaign management and product analytics. Thrives on transforming complex data into impactful, growth-driven product solutions.",
     avatar: "",
   },
   {
-    name: "Mohammed Al-Sayed",
-    role: "Lead Developer",
-    bio: "Full-stack developer focused on scalable, secure, and user-friendly solutions.",
+    name: "Parshuram Dhavle",
+    role: "Co-Founder & Head of Legal and Compliance",
+    bio: "A full-stack developer with a sharp legal acumen. Combines technical expertise with regulatory insights to build secure, scalable, and compliant digital platforms.",
     avatar: "",
   },
   {
-    name: "Priya Nair",
-    role: "Client Success Manager",
-    bio: "Ensures every client gets the most from our platform. Known for her dedication and empathy.",
+    name: "Shubham L",
+    role: "Technical Lead",
+    bio: "A technology enthusiast committed to building high-performance platforms. Renowned for problem-solving skills, innovation, and delivering seamless client experiences.",
     avatar: "",
   },
 ];
+
 
 const getInitials = (name: string) =>
   name
