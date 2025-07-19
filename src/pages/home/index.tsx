@@ -83,7 +83,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          style={{ zIndex: 1, width: "100vw" , minHeight: "60vh" }}
+          style={{ zIndex: 1, width: "100vw", minHeight: "60vh" }}
         >
           <Typography
             variant="h2"
@@ -113,18 +113,22 @@ const Home = () => {
       {/* Why choose us */}
       <Box
         sx={{
-          // py: 10,
           px: { xs: 3, md: 10 },
           width: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          // background: theme.palette.background.paper,
           background: `linear-gradient(90deg, ${theme.palette.primary.main}11 0%, ${theme.palette.secondary.main}11 100%)`,
-          pb:10 
+          pb: 10,
+          pt: { xs: 6, md: 10 },
         }}
       >
-        <Grid container spacing={2} alignItems="start" justifyContent="center">
+        <Grid
+          container
+          spacing={4}
+          alignItems="flex-start"
+          justifyContent="center"
+        >
           {/* Left Side */}
           <Grid item xs={12} md={5}>
             <Typography
@@ -147,19 +151,17 @@ const Home = () => {
             </Typography>
 
             <Typography variant="body1" color="text.secondary" mb={4}>
-              Empowering companies to connect with their customers through timely, targeted email campaigns that drive engagement, build loyalty, and boost ROI.
+              Empowering companies to connect with their customers through
+              timely, targeted email campaigns that drive engagement, build
+              loyalty, and boost ROI.
             </Typography>
-
-            {/* <Button variant="contained" size="large">
-              Try for Free
-            </Button> */}
           </Grid>
 
-          {/* Right Side */}
-          <Grid item xs={12} md={5} alignItems="center">
-            <Grid container spacing={5}>
+          {/* Right Side - Feature Cards */}
+          <Grid item xs={12} md={7}>
+            <Grid container spacing={3} justifyContent="center">
               {features.map((feature, i) => (
-                <Grid item xs={12} sm={5} key={feature.title}>
+                <Grid item xs={12} sm={6} md={6} key={feature.title}>
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -168,32 +170,28 @@ const Home = () => {
                     <Card
                       sx={{
                         p: 3,
-                        // borderRadius: ,
-                        // boxShadow: ,
-                        boxShadow: 'none',
-                        background: "#fff91",
-                        border: "none",
-                        backdropFilter: "blur(10x)",
-                        height: "10rem",
-                        minHeight: 120,
+                        background: "#fffcc", // semi-transparent white
+                        border: "1px solid #e0e0e0",
+                        backdropFilter: "blur(10px)",
+                        borderRadius: 1,
+                        height: "8rem",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "flex-start",
-                        width: "18rem",
+                        // width: "14rem"
+                        
                       }}
                     >
-                      <Box display="flex" flexDirection="column" mb={0}>
-                        <Typography fontWeight={700} gutterBottom>
-                          {feature.title}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          color="text.secondary"
-                          sx={{ mt: 1 }}
-                        >
-                          {feature.description}
-                        </Typography>
-                      </Box>
+                      <Typography fontWeight={700} gutterBottom>
+                        {feature.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ mt: 1 }}
+                      >
+                        {feature.description}
+                      </Typography>
                     </Card>
                   </motion.div>
                 </Grid>
