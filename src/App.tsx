@@ -33,6 +33,7 @@ function App() {
           minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
+          background: `linear-gradient(90deg, ${theme.palette.primary.main}11 0%, ${theme.palette.secondary.main}11 100%)`
         }}
       >
         {!is404 && <ResponsiveAppBar onToggleTheme={toggleTheme} />}

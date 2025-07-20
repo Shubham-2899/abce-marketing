@@ -162,7 +162,7 @@ const ContactUs = () => {
               <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}>
                 <LocationOnIcon />
               </Avatar>
-              <CardContent sx={{ p: 0 }}>
+              <CardContent sx={{ p: 0 , minHeight :"6rem" }}>
                 <Typography fontWeight={600}>Address</Typography>
                 <Typography
                   variant="body2"
@@ -185,7 +185,7 @@ const ContactUs = () => {
               <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}>
                 <EmailIcon />
               </Avatar>
-              <CardContent sx={{ p: 0 }}>
+              <CardContent sx={{ p: 0 , minHeight :"6rem" }}>
                 <Typography fontWeight={600}>Email</Typography>
                 <Typography
                   variant="body2"
@@ -208,7 +208,7 @@ const ContactUs = () => {
               <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}>
                 <PhoneIcon />
               </Avatar>
-              <CardContent sx={{ p: 0 }}>
+              <CardContent sx={{ p: 0 , minHeight :"6rem" }}>
                 <Typography fontWeight={600}>Phone</Typography>
                 <Typography
                   variant="body2"

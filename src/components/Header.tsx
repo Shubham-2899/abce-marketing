@@ -6,7 +6,8 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
-import mms from "../assets/raslogo.png";
+// import mms from "../assets/raslogo.png";
+import bmms from "../assets/raspix.png";
 import { useTheme } from "@mui/material/styles";
 import { motion, AnimatePresence } from "framer-motion";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -46,7 +47,7 @@ function ResponsiveAppBar({ onToggleTheme }: ResponsiveAppBarProps) {
       <AppBar
         position="sticky"
         color="transparent"
-        elevation={0}
+        // elevation={0}
         sx={{
           borderBottom: `1px solid ${theme.palette.divider}`,
           backgroundColor: theme.palette.background.paper,
@@ -62,7 +63,7 @@ function ResponsiveAppBar({ onToggleTheme }: ResponsiveAppBarProps) {
               to={`/home`}
             >
               <img
-                src={mms}
+                src={isDark ? bmms: bmms }
                 alt="raspix media email marketing"
                 style={{
                   objectFit: "cover",

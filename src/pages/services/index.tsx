@@ -229,7 +229,7 @@ const Services = () => {
     >
       <Box
         sx={{
-          bgcolor: theme.palette.background.paper,
+          bgcolor:`linear-gradient(90deg, ${theme.palette.primary.main}11 0%, ${theme.palette.secondary.main}11 100%)`,
           color: theme.palette.text.primary,
           py: 8,
           px: { xs: 2, md: 8 },
@@ -301,7 +301,7 @@ const Services = () => {
         sx={{
           px: { xs: 2, md: 6 },
           py: 6,
-          bgcolor: theme.palette.background.paper,
+          bgcolor:`linear-gradient(90deg, ${theme.palette.primary.main}11 0%, ${theme.palette.secondary.main}11 100%)`,
         }}
       >
         {sections.map((section) => (
