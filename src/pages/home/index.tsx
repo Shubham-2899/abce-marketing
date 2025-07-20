@@ -4,7 +4,7 @@ import {
   Button,
   Card,
   Grid,
-  Link as MuiLink,
+  // Link as MuiLink,
   useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -14,9 +14,6 @@ import StarIcon from "@mui/icons-material/Star";
 import SecurityIcon from "@mui/icons-material/Security";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import WaveBackground from "../../components/WaveBackground";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
