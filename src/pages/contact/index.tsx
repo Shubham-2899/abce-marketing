@@ -1,7 +1,22 @@
-import { Box, Typography, TextField, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Card,
+  CardContent,
+  Grid,
+  Avatar,
+} from "@mui/material";
 import React, { useState } from "react";
+import { useTheme } from "@mui/material/styles";
+import { motion } from "framer-motion";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 const ContactUs = () => {
+  const theme = useTheme();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,6 +31,7 @@ const ContactUs = () => {
   });
 
   const [successMessage, setSuccessMessage] = useState("");
+  console.log("🚀 ~ ContactUs ~ successMessage:", successMessage);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -89,60 +105,179 @@ const ContactUs = () => {
   };
 
   return (
-    <Box
-      sx={{
-        background: "whitesmoke",
-        width: "100%",
-      }}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
     >
       <Box
         sx={{
-          padding: "20px",
-          maxWidth: "600px",
-          margin: "auto",
-          color: "#777",
+          background: theme.palette.background.paper,
+          width: "100%",
+          py: 8,
+          px: { xs: 2, md: 8 },
         }}
       >
-        <Typography
-          variant="h3"
-          align="center"
-          gutterBottom
-          sx={{ fontSize: "30px" }}
-        >
-          Contact Us
-        </Typography>
-        <Typography
-          variant="body1"
-          align="center"
-          gutterBottom
+        <Box
           sx={{
-            textAlign: { xs: "justify", sm: "center" },
-            fontSize: { sm: "16px", xs: "14px" },
+            padding: "20px",
+            maxWidth: "700px",
+            margin: "auto",
+            color: theme.palette.text.primary,
           }}
         >
-          We'd love to hear from you! For any questions or feedback, please
-          reach out to us. Fill out the form below, and we'll respond as quickly
-          as possible.
-        </Typography>
-        <form onSubmit={handleSubmit}>
-          {successMessage && (
-            <Typography
-              variant="body2"
-              align="center"
-              color="green"
-              sx={{ marginTop: "10px" }}
+          <Typography
+            variant="h3"
+            align="center"
+            gutterBottom
+            sx={{ fontSize: "30px" }}
+          >
+            Contact Us
+          </Typography>
+          <Typography
+            variant="body1"
+            align="center"
+            gutterBottom
+            sx={{
+              textAlign: { xs: "justify", sm: "center" },
+              fontSize: { sm: "16px", xs: "14px" },
+            }}
+          >
+            We'd love to hear from you! For any questions or feedback, please
+            reach out to us. Fill out the form below, and we'll respond as
+            quickly as possible.
+          </Typography>
+        </Box>
+        {/* Contact Info Cards */}
+        <Grid container spacing={4} justifyContent="center" mb={4}>
+          <Grid item xs={12} sm={4}>
+            <Card
+              sx={{
+                p: 2,
+                display: "flex",
+                alignItems: "center",
+                background: theme.palette.background.default,
+              }}
             >
-              {successMessage}
-            </Typography>
-          )}
+              <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}>
+                <LocationOnIcon />
+              </Avatar>
+              <CardContent sx={{ p: 0 }}>
+                <Typography fontWeight={600}>Address</Typography>
+                <Typography
+                  variant="body2"
+                  color={theme.palette.text.secondary}
+                >
+                  1 Kharadi,EON Free Zone, Knowledge Park, Pune, Maharashtra 411014
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Card
+              sx={{
+                p: 2,
+                display: "flex",
+                alignItems: "center",
+                background: theme.palette.background.default,
+              }}
+            >
+              <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}>
+                <EmailIcon />
+              </Avatar>
+              <CardContent sx={{ p: 0 }}>
+                <Typography fontWeight={600}>Email</Typography>
+                <Typography
+                  variant="body2"
+                  color={theme.palette.text.secondary}
+                >
+                  admin@raspixmedia.com
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Card
+              sx={{
+                p: 2,
+                display: "flex",
+                alignItems: "center",
+                background: theme.palette.background.default,
+              }}
+            >
+              <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}>
+                <PhoneIcon />
+              </Avatar>
+              <CardContent sx={{ p: 0 }}>
+                <Typography fontWeight={600}>Phone</Typography>
+                <Typography
+                  variant="body2"
+                  color={theme.palette.text.secondary}
+                >
+                  --
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+        {/* Google Map Embed */}
+        <Box sx={{ width: "100%", maxWidth: 700, mx: "auto", mb: 4 }}>
+          <Box
+            sx={{
+              height: 200,
+              borderRadius: 3,
+              overflow: "hidden",
+              boxShadow: 2,
+            }}
+          >
+            {/* 
+              Replace the src below with your Google Maps embed URL.
+              To use your API key, generate the embed link from Google Maps Platform.
+              Example: 
+              <iframe
+                src={`https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=123+Main+Street,Mumbai,India`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="RASPIX Media Location"
+              />
+            */}
+            <Box
+              sx={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "text.secondary",
+                fontWeight: 500,
+                fontSize: 18,
+                background: "rgba(0,0,0,0.03)",
+              }}
+            >
+              Google Map
+            </Box>
+          </Box>
+        </Box>
+        {/* Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               gap: "16px",
               padding: "20px",
-              marginTop: "20px",
+              margin: "auto",
               borderRadius: "5px",
+              background: theme.palette.background.default,
+              maxWidth: "700px",
             }}
           >
             <TextField
@@ -156,7 +291,7 @@ const ContactUs = () => {
               size="small"
               error={Boolean(errors.nameError)}
               helperText={errors.nameError}
-              sx={{ background: "white" }}
+              sx={{ background: theme.palette.background.paper }}
               required
             />
             <TextField
@@ -170,7 +305,7 @@ const ContactUs = () => {
               size="small"
               error={Boolean(errors.emailError)}
               helperText={errors.emailError}
-              sx={{ background: "white" }}
+              sx={{ background: theme.palette.background.paper }}
               required
             />
             <TextField
@@ -184,33 +319,33 @@ const ContactUs = () => {
               size="small"
               error={Boolean(errors.contactNumberError)}
               helperText={errors.contactNumberError}
-              sx={{ background: "white" }}
+              sx={{ background: theme.palette.background.paper }}
               required
             />
             <TextField
               label="Message"
               variant="outlined"
               name="message"
-              multiline
-              rows={4}
               value={formData.message}
               onChange={handleChange}
               fullWidth
-              size="small"
-              sx={{ background: "white" }}
+              multiline
+              minRows={4}
+              sx={{ background: theme.palette.background.paper }}
+              required
             />
             <Button
-              type="submit"
-              variant="outlined"
+              variant="contained"
               color="primary"
-              sx={{ alignSelf: "center" }}
+              onClick={handleSubmit}
+              sx={{ fontWeight: 600, fontSize: "16px" }}
             >
               Submit
             </Button>
           </Box>
-        </form>
+        </motion.div>
       </Box>
-    </Box>
+    </motion.div>
   );
 };
 
