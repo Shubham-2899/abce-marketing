@@ -16,25 +16,25 @@ import Diversity3Icon from "@mui/icons-material/Diversity3";
 const team = [
   {
     name: "Rahul Kadam",
-    role: "Co-Founder & Chief Executive Officer (CEO)",
+    role: "Founder & Managing Director",
     bio: "A visionary entrepreneur with over 15 years of experience in digital marketing and SaaS. Passionate about driving innovation, fostering growth, and delivering exceptional client outcomes.",
     avatar: "",
   },
   {
     name: "Ajay Shinde",
-    role: "Co-Founder & Head of Product",
+    role: "Co-Founder & Chief Operating Officer (COO)",
     bio: "A strategic thinker with deep expertise in campaign management and product analytics. Thrives on transforming complex data into impactful, growth-driven product solutions.",
     avatar: "",
   },
   {
     name: "Parshuram Dhavle",
-    role: "Co-Founder & Head of Legal and Compliance",
-    bio: "A full-stack developer with a sharp legal acumen. Combines technical expertise with regulatory insights to build secure, scalable, and compliant digital platforms.",
+    role: "Head of Administration & Compliance",
+    bio: "An expert in legal frameworks and regulatory compliance, ensuring all business operations align with industry standards and data protection laws.",
     avatar: "",
   },
   {
     name: "Shubham L",
-    role: "Technical Lead",
+    role: "Technical Lead & Solutions Architect",
     bio: "A technology enthusiast committed to building high-performance platforms. Renowned for problem-solving skills, innovation, and delivering seamless client experiences.",
     avatar: "",
   },

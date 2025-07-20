@@ -19,6 +19,9 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import WaveBackground from "../../components/WaveBackground";
+import DesignServicesIcon from "@mui/icons-material/DesignServices";
+import GroupAddIcon from "@mui/icons-material/GroupAdd";
+import InsightsIcon from "@mui/icons-material/Insights";
 
 const features = [
   {
@@ -44,12 +47,40 @@ const features = [
   },
 ];
 
-const socialLinks = [
-  { icon: <FacebookIcon />, url: "https://facebook.com", label: "Facebook" },
-  { icon: <TwitterIcon />, url: "https://twitter.com", label: "Twitter" },
-  { icon: <LinkedInIcon />, url: "https://linkedin.com", label: "LinkedIn" },
-  { icon: <EmailIcon />, url: "mailto:info@raspixmedia.com", label: "Email" },
+const services = [
+  {
+    title: "Transactional Emails",
+    description:
+      "Deliver time-sensitive emails instantly to your customers' inboxes, ensuring critical information is always on time.",
+    icon: <EmailIcon fontSize="large" color="primary" />,
+    link: "/services#email-marketing",
+  },
+  {
+    title: "Marketing Campaigns",
+    description:
+      "Create, schedule, and automate beautiful marketing emails that drive engagement and conversions.",
+    icon: <DesignServicesIcon fontSize="large" color="secondary" />,
+  },
+  {
+    title: "Subscriber Growth",
+    description:
+      "Grow your audience with smart signup forms, segmentation, and referral incentives.",
+    icon: <GroupAddIcon fontSize="large" color="primary" />,
+  },
+  {
+    title: "Analytics & Insights",
+    description:
+      "Track every open, click, and conversion with real-time analytics and actionable insights.",
+    icon: <InsightsIcon fontSize="large" color="secondary" />,
+  },
 ];
+
+// const socialLinks = [
+//   { icon: <FacebookIcon />, url: "https://facebook.com", label: "Facebook" },
+//   { icon: <TwitterIcon />, url: "https://twitter.com", label: "Twitter" },
+//   { icon: <LinkedInIcon />, url: "https://linkedin.com", label: "LinkedIn" },
+//   { icon: <EmailIcon />, url: "mailto:info@raspixmedia.com", label: "Email" },
+// ];
 
 const Home = () => {
   const theme = useTheme();
@@ -59,7 +90,12 @@ const Home = () => {
   console.log("theme.palette.mode", isDark);
 
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box
+      sx={{
+        position: "relative",
+        background: `linear-gradient(90deg, ${theme.palette.primary.main}11 0%, ${theme.palette.secondary.main}11 100%)`,
+      }}
+    >
       {/* Hero Section */}
       <Box
         sx={{
@@ -73,7 +109,7 @@ const Home = () => {
           // overflow: "scoll",
           // zIndex : 1,
           py: 8,
-          px: 2,
+          // px: 2,
           background: `linear-gradient(90deg, ${theme.palette.primary.main}11 0%, ${theme.palette.secondary.main}11 100%)`,
         }}
       >
@@ -85,22 +121,59 @@ const Home = () => {
           transition={{ duration: 0.7 }}
           style={{ zIndex: 1, width: "100vw", minHeight: "60vh" }}
         >
+          <Button
+            variant="outlined"
+            color="primary"
+            size="small"
+            sx={{
+              fontWeight: 600,
+              fontSize: { xs: "0.85rem", md: "1rem" },
+              borderRadius: ".3rem",
+            }}
+            disabled
+          >
+            Digital Business Solution
+          </Button>
           <Typography
             variant="h2"
             fontWeight={700}
             color={theme.palette.text.primary}
             mb={2}
+            sx={{
+              fontSize: {
+                xs: "2rem",
+                sm: "2.5rem",
+                md: "3rem",
+                lg: "3.5rem",
+              },
+              lineHeight: 1.2,
+            }}
           >
-            RASPIX Media Email Marketing
+            Accelerate Growth with Smart,
+            <br />
+            Scalable Email Marketing
           </Typography>
-          <Typography variant="h5" color={theme.palette.text.secondary} mb={4}>
+          <Typography
+            variant="h6"
+            color={theme.palette.text.secondary}
+            mb={8}
+            sx={{
+              maxWidth: "700px",
+              mx: "auto",
+              fontSize: {
+                xs: "1rem",
+                sm: "1.1rem",
+                md: "1.2rem",
+              },
+            }}
+          >
             Your best bet to get emails delivered to Inbox. Grow your business
             with reliable, secure, and effective email marketing.
           </Typography>
           <Button
+            variant="outlined"
             component={Link}
             to="/contact-us"
-            variant="contained"
             color="primary"
             size="large"
             sx={{ fontWeight: 600, px: 4, py: 1.5, fontSize: "1.1rem" }}
@@ -158,7 +231,7 @@ const Home = () => {
           </Grid>
 
           {/* Right Side - Feature Cards */}
-          <Grid item xs={12} md={7}>
+          <Grid item xs={12} md={5}>
             <Grid container spacing={3} justifyContent="center">
               {features.map((feature, i) => (
                 <Grid item xs={12} sm={6} md={6} key={feature.title}>
@@ -173,13 +246,12 @@ const Home = () => {
                         background: "#fffcc", // semi-transparent white
                         border: "1px solid #e0e0e0",
                         backdropFilter: "blur(10px)",
-                        borderRadius: 1,
+                        borderRadius: 1.5,
                         height: "8rem",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "flex-start",
                         // width: "14rem"
-                        
                       }}
                     >
                       <Typography fontWeight={700} gutterBottom>
@@ -198,6 +270,92 @@ const Home = () => {
               ))}
             </Grid>
           </Grid>
+        </Grid>
+      </Box>
+
+      {/** Our Service */}
+
+      <Box
+        sx={{
+          py: { xs: 6, md: 10 },
+          px: { xs: 2, md: 8 },
+          textAlign: "center",
+          background: `linear-gradient(90deg, ${theme.palette.primary.main}11 0%, ${theme.palette.secondary.main}11 100%)`,
+        }}
+      >
+        <Typography
+          variant="subtitle1"
+          color="primary"
+          fontSize={28}
+          fontWeight={700}
+          gutterBottom
+        >
+          Our Email Solutions
+        </Typography>
+
+        <Typography
+          variant="h4"
+          fontWeight={800}
+          mb={6}
+          sx={{ maxWidth: 800, mx: "auto" }}
+        >
+          Everything You Need for Seamless Email Communication
+        </Typography>
+
+        <Grid
+          container
+          spacing={4}
+          alignSelf="center"
+          justifyContent="center"
+          sx={{
+            maxWidth: 1200,
+            mx: "auto", // centers horizontally
+            alignItems: "stretch", // ensures equal height cards if needed
+            px: { xs: 2, sm: 4 },
+          }}
+        >
+          {services.map((item, i) => (
+            <Grid item xs={12} sm={6} md={5} key={i}>
+              <Card
+                elevation={0}
+                sx={{
+                  p: 3,
+                  borderRadius: 3,
+                  border: "1px solid #eee",
+                  backgroundColor: "#fffcc",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  textAlign: "left",
+                }}
+              >
+                <Box mb={2}>{item.icon}</Box>
+
+                <Typography variant="h6" fontWeight={700} gutterBottom>
+                  {item.title}
+                </Typography>
+
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ flexGrow: 1, mb: 3 }}
+                >
+                  {item.description}
+                </Typography>
+                <a href="/services#email-marketing">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    sx={{ width: "8rem", borderRadius: "2rem" }}
+                  >
+                    Learn More
+                  </Button>
+                </a>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </Box>
 
@@ -306,7 +464,7 @@ const Home = () => {
       </Box> */}
 
       {/* Social Icons Section */}
-      <Box
+      {/* <Box
         sx={{
           py: 4,
           textAlign: "center",
@@ -343,7 +501,7 @@ const Home = () => {
             </MuiLink>
           ))}
         </Box>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

@@ -168,7 +168,7 @@ const ContactUs = () => {
                   variant="body2"
                   color={theme.palette.text.secondary}
                 >
-                  123 Main Street, Mumbai, India
+                  1 Kharadi, Dholepatil Farms Rd, opp. EON Free Zone, MIDC, Knowledge Park, Pune, Maharashtra 411014
                 </Typography>
               </CardContent>
             </Card>
@@ -191,7 +191,7 @@ const ContactUs = () => {
                   variant="body2"
                   color={theme.palette.text.secondary}
                 >
-                  info@raspixmedia.com
+                  admin@raspixmedia.com
                 </Typography>
               </CardContent>
             </Card>
@@ -214,7 +214,7 @@ const ContactUs = () => {
                   variant="body2"
                   color={theme.palette.text.secondary}
                 >
-                  +91 98765 43210
+                  --
                 </Typography>
               </CardContent>
             </Card>
@@ -258,7 +258,7 @@ const ContactUs = () => {
                 background: "rgba(0,0,0,0.03)",
               }}
             >
-              [Google Map will appear here]
+              Google Map
             </Box>
           </Box>
         </Box>

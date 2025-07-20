@@ -1,9 +1,16 @@
-import { Box, Typography, Grid, Link as MuiLink } from "@mui/material";
-import { useTheme } from '@mui/material/styles';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
+import {
+  Box,
+  Typography,
+  Grid,
+  Link as MuiLink,
+  TextField,
+  Button,
+} from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
 import { Link } from "react-router-dom";
 
 const quickLinks = [
@@ -19,17 +26,43 @@ const quickLinks = [
 const socialLinks = [
   { icon: <FacebookIcon />, url: "https://facebook.com", label: "Facebook" },
   { icon: <TwitterIcon />, url: "https://twitter.com", label: "Twitter" },
-  { icon: <LinkedInIcon />, url: "https://linkedin.com", label: "LinkedIn" },
-  { icon: <EmailIcon />, url: "mailto:info@raspixmedia.com", label: "Email" },
+  { icon: <LinkedInIcon />, url: "https://www.linkedin.com/company/raspix-media/", label: "LinkedIn" },
+  { icon: <EmailIcon />, url: "mailto:admin@raspixmedia.com", label: "Email" },
 ];
 
 const Footer = () => {
   const theme = useTheme();
+
   return (
-    <Box sx={{ background: theme.palette.background.paper, pt: 4, pb: 2, mt: 4 }}>
-      <Grid container spacing={2} justifyContent="center" alignItems="center" sx={{px: 2}}>
-        <Grid item xs={12} md={6}>
-          <Box display="flex" justifyContent={{ xs: "center", md: "flex-start" }} gap={2} flexWrap="wrap">
+    <Box
+      component="footer"
+      sx={{
+        background: theme.palette.background.paper,
+        pt: 6,
+        pb: 3,
+        mt: 3,
+        borderTop: `.8rem solid ${theme.palette.divider}`,
+      }}
+    >
+      <Grid container spacing={4} justifyContent="center" sx={{ px: 2 }}>
+        {/* Company Info */}
+        <Grid item xs={12} sm={6} md={3}>
+          <Typography variant="h6" gutterBottom>
+            RASPIX Media
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            We help companies deliver critical messages, engage customers, and
+            grow their audience with intelligent email solutions and
+            data-driven insights.
+          </Typography>
+        </Grid>
+
+        {/* Quick Links */}
+        <Grid item xs={12} sm={6} md={3}>
+          <Typography variant="h6" gutterBottom>
+            Quick Links
+          </Typography>
+          <Box display="flex" flexDirection="column" gap={1}>
             {quickLinks.map((link) => (
               <MuiLink
                 key={link.label}
@@ -37,12 +70,10 @@ const Footer = () => {
                 to={link.to}
                 color="inherit"
                 sx={{
-                  fontWeight: 500,
-                  fontSize: 16,
+                  fontSize: 14,
                   color: theme.palette.text.secondary,
                   textDecoration: "none",
                   "&:hover": { color: theme.palette.primary.main },
-                  mx: 1,
                 }}
               >
                 {link.label}
@@ -50,40 +81,74 @@ const Footer = () => {
             ))}
           </Box>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <Box display="flex" justifyContent={{ xs: "center", md: "flex-end" }} gap={2}>
+
+        {/* Contact Info */}
+        <Grid item xs={12} sm={6} md={3}>
+          <Typography variant="h6" gutterBottom>
+            Contact
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Email: admin@raspixmedia.com
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Phone: --
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Location: Pune, Maharashtra, India
+          </Typography>
+          <Box mt={2} display="flex" gap={1}>
             {socialLinks.map((social) => (
               <MuiLink
                 key={social.label}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                color="inherit"
                 sx={{
-                  fontSize: 28,
+                  fontSize: 24,
                   color: theme.palette.primary.main,
-                  transition: "color 0.2s",
                   "&:hover": { color: theme.palette.secondary.main },
-                  mx: 1,
                 }}
-                aria-label={social.label}
               >
                 {social.icon}
               </MuiLink>
             ))}
           </Box>
         </Grid>
+
+        {/* Newsletter Signup */}
+        <Grid item xs={12} sm={6} md={3}>
+          <Typography variant="h6" gutterBottom>
+            Stay Updated
+          </Typography>
+          <Typography variant="body2" color="text.secondary" mb={1}>
+            Join our newsletter for the latest updates.
+          </Typography>
+          <Box display="flex" gap={1}>
+            <TextField
+              size="small"
+              placeholder="Your Email"
+              variant="outlined"
+              sx={{ flex: 1 }}
+            />
+            <Button variant="contained" color="primary">
+              Subscribe
+            </Button>
+          </Box>
+        </Grid>
       </Grid>
-      <Typography
-        sx={{
-          fontSize: { xs: "14px", sm: "16px" },
-          textAlign: "center",
-          padding: "16px 0 0 0",
-          color: theme.palette.text.secondary,
-        }}
-      >
-        © {new Date().getFullYear()} RASPIX Media Services. All rights reserved.
-      </Typography>
+
+      {/* Copyright */}
+      <Box mt={4}>
+        <Typography
+          variant="body2"
+          align="center"
+          color="text.secondary"
+          sx={{ fontSize: { xs: "13px", sm: "15px" } }}
+        >
+          © {new Date().getFullYear()} RASPIX Media Services. All rights
+          reserved.
+        </Typography>
+      </Box>
     </Box>
   );
 };
