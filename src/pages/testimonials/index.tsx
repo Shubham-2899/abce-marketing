@@ -46,7 +46,7 @@ const Testimonials = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
             >
-              <Card sx={{ p: 2, borderRadius: 4, boxShadow: 3, background: theme.palette.background.paper }}>
+              <Card sx={{ p: 2, borderRadius: 4, boxShadow: 3, background: theme.palette.background.paper , minHeight : "12rem" }}>
                 <Box display="flex" alignItems="center" mb={2}>
                   <Avatar sx={{ bgcolor: theme.palette.primary.main, mr: 2 }}>
                     {getInitials(t.name)}

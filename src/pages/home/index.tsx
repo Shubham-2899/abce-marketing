@@ -89,7 +89,6 @@ const Home = () => {
   return (
     <Box
       sx={{
-        position: "relative",
         background: `linear-gradient(90deg, ${theme.palette.primary.main}11 0%, ${theme.palette.secondary.main}11 100%)`,
       }}
     >
@@ -116,7 +115,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          style={{ zIndex: 1, width: "100vw", minHeight: "60vh" }}
+          style={{ zIndex: 1 }}
         >
           <Button
             variant="outlined"
@@ -301,18 +300,19 @@ const Home = () => {
 
         <Grid
           container
-          spacing={4}
+          spacing={6}
           alignSelf="center"
           justifyContent="center"
           sx={{
-            maxWidth: 1200,
-            mx: "auto", // centers horizontally
+            maxWidth: 1100,
+            // mx: "auto", // centers horizontally
             alignItems: "stretch", // ensures equal height cards if needed
             px: { xs: 2, sm: 4 },
+            mx: { sm: "auto" },
           }}
         >
           {services.map((item, i) => (
-            <Grid item xs={12} sm={6} md={5} key={i}>
+            <Grid item xs={12} sm={6} md={6} key={i}>
               <Card
                 elevation={0}
                 sx={{

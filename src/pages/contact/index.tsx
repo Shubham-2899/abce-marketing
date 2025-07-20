@@ -168,7 +168,7 @@ const ContactUs = () => {
                   variant="body2"
                   color={theme.palette.text.secondary}
                 >
-                  1 Kharadi, Dholepatil Farms Rd, opp. EON Free Zone, MIDC, Knowledge Park, Pune, Maharashtra 411014
+                  1 Kharadi,EON Free Zone, Knowledge Park, Pune, Maharashtra 411014
                 </Typography>
               </CardContent>
             </Card>
