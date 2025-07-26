@@ -8,27 +8,39 @@
 
 
 <url>
-  <loc>https://monkeymediasolutions.com/</loc>
+  <loc>https://raspixmedia.com/</loc>
   <lastmod>2024-12-03T03:23:05+00:00</lastmod>
   <priority>1.0</priority>
 </url>
  <url>
-    <loc>https://monkeymediasolutions.com/home</loc>
+    <loc>https://raspixmedia.com/home</loc>
     <lastmod>2024-12-03</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://monkeymediasolutions.com/contact-us</loc>
+    <loc>https://raspixmedia.com/contact-us</loc>
     <lastmod>2024-12-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://monkeymediasolutions.com/about-us</loc>
+    <loc>https://raspixmedia.com/about-us</loc>
     <lastmod>2024-12-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://monkeymediasolutions.com/services</loc>
+    <loc>https://raspixmedia.com/services</loc>
+    <lastmod>2024-12-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://raspixmedia.com/testimonials</loc>
+    <lastmod>2024-12-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://raspixmedia.com/portfolio</loc>
     <lastmod>2024-12-03</lastmod>
     <priority>0.8</priority>
   </url>
