@@ -12,6 +12,7 @@ import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import Diversity3Icon from "@mui/icons-material/Diversity3";
+import raslogo from "../../assets/raslogo.png";
 
 const team = [
   {
@@ -160,7 +161,7 @@ const AboutUs = () => {
                 }}
               >
                 <img
-                  src="/src/assets/raslogo.png"
+                  src={raslogo}
                   alt="RASPIX Media Logo"
                   style={{
                     maxHeight: "100%",
