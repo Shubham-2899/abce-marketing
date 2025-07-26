@@ -22,7 +22,7 @@ const team = [
   },
   {
     name: "Ajay Shinde",
-    role: "Co-Founder & Chief Operating Officer (COO)",
+    role: " Co-Founder and Head Of Operations",
     bio: "A strategic thinker with deep expertise in campaign management and product analytics. Thrives on transforming complex data into impactful, growth-driven product solutions.",
     avatar: "",
   },
@@ -33,7 +33,7 @@ const team = [
     avatar: "",
   },
   {
-    name: "Shubham L",
+    name: "Shubham",
     role: "Technical Lead & Solutions Architect",
     bio: "A technology enthusiast committed to building high-performance platforms. Renowned for problem-solving skills, innovation, and delivering seamless client experiences.",
     avatar: "",
