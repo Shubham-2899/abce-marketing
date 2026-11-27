@@ -1,49 +1,51 @@
-import "./App.css";
-import { Box, ThemeProvider, CssBaseline } from "@mui/material";
-import { useLocation } from "react-router-dom";
-import ABCRoutes from "./routes";
-import ResponsiveAppBar from "./components/Header";
-import Footer from "./components/Footer";
-import { useMemo, useState } from "react";
-import { getTheme } from "./theme";
+import { Suspense, lazy, useEffect } from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import SiteHeader from "./components/SiteHeader";
+import MailLoader from "./components/MailLoader";
 
-function App() {
-  const location = useLocation();
-  const [mode, setMode] = useState<"light" | "dark">(
-    window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light"
-  );
-  const theme = useMemo(() => getTheme(mode), [mode]);
-  const toggleTheme = () =>
-    setMode((prev) => (prev === "light" ? "dark" : "light"));
+/*
+ * RASPIX Media public website.
+ * The client portal (sign-in, campaigns, reports, admin) is a separate app;
+ * the header's "Client Login" button links to it via VITE_APP_PORTAL_URL.
+ */
 
-  // Only hide header/footer on 404 page
-  const is404 =
-    location.pathname === "/404" ||
-    location.pathname === "/not-found" ||
-    location.pathname === "/notFound404";
+const SiteHome = lazy(() => import("./site/pages/SiteHome"));
+const AboutPage = lazy(() => import("./site/pages/AboutPage"));
+const ServicesPage = lazy(() => import("./site/pages/ServicesPage"));
+const ContactPage = lazy(() => import("./site/pages/ContactPage"));
+const PortfolioPage = lazy(() => import("./site/pages/PortfolioPage"));
+const PrivacyPage = lazy(() => import("./site/pages/PrivacyPage"));
+const NotFound = lazy(() => import("./site/pages/NotFound"));
 
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box
-        sx={{
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          background: `linear-gradient(90deg, ${theme.palette.primary.main}11 0%, ${theme.palette.secondary.main}11 100%)`
-        }}
-      >
-        {!is404 && <ResponsiveAppBar onToggleTheme={toggleTheme} />}
-        <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <ABCRoutes />
-        </Box>
-        {!is404 && <Footer />}
-      </Box>
-    </ThemeProvider>
-  );
+/** Start each new page at the top (hash links are handled by the page). */
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (!hash) window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
 }
 
-export default App;
+export default function App() {
+  return (
+    <>
+      <SiteHeader />
+      <ScrollToTop />
+      <Suspense fallback={<MailLoader variant="fullscreen" size={140} label="Loading" />}>
+        <Routes>
+          <Route path="/" element={<SiteHome />} />
+          {/* the existing site and sitemap use /home */}
+          <Route path="/home" element={<SiteHome />} />
+          <Route path="/about-us" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact-us" element={<ContactPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPage />} />
+          {/* page removed: send old links to the homepage */}
+          <Route path="/testimonials" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </>
+  );
+}
